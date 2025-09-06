@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.lojur.edu.backend.declarations.BaseEntity;
 import com.lojur.edu.backend.entities.driver_license.DriverLicense;
-import com.lojur.edu.backend.entities.reservation.Reservation;
+import com.lojur.edu.backend.entities.booking.Booking;
 import com.lojur.edu.backend.entities.vehicle.Vehicle;
 
 import jakarta.persistence.Column;
@@ -57,10 +57,10 @@ public class Account extends BaseEntity implements UserDetails {
     private Set<Vehicle> vehicles = new HashSet<>();
 
     @OneToMany(mappedBy = "consumer", fetch = FetchType.LAZY)
-    private Set<Reservation> reservationsAsConsumer = new HashSet<>();
+    private Set<Booking> bookingsAsConsumer = new HashSet<>();
 
     @OneToMany(mappedBy = "provider", fetch = FetchType.LAZY)
-    private Set<Reservation> reservationsAsProvider = new HashSet<>();
+    private Set<Booking> bookingsAsProvider = new HashSet<>();
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Set<DriverLicense> driverLicenses = new HashSet<>();
