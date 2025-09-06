@@ -1,4 +1,4 @@
-package com.lojur.edu.backend.entities.reservation;
+package com.lojur.edu.backend.entities.booking;
 
 import com.lojur.edu.backend.declarations.BaseEntity;
 import com.lojur.edu.backend.entities.account.Account;
@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Reservation extends BaseEntity {
+public class Booking extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

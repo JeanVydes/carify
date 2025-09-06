@@ -1,7 +1,7 @@
 package com.lojur.edu.backend.entities.order;
 
 import com.lojur.edu.backend.declarations.BaseEntity;
-import com.lojur.edu.backend.entities.reservation.Reservation;
+import com.lojur.edu.backend.entities.booking.Booking;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,7 +30,7 @@ public class Order extends BaseEntity {
     private OrderStatus status;
 
     @OneToOne(mappedBy = "order", fetch = FetchType.LAZY)
-    private Reservation reservation;
+    private Booking booking;
 
     @Column(name = "currency", length = 3, nullable = false)
     private String currency;
